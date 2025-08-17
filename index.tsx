@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Colors, FontSize, Gaps } from "./shared/tokens";
 import { Button } from "./shared/Button";
+import { AnimatedTitle } from "./shared/AnimatedText";
 
 function App() {
   const height = Dimensions.get("screen").height;
@@ -22,9 +23,7 @@ function App() {
         >
           <View style={styles.content}>
             <View style={styles.intro}>
-              <Text style={styles.title}>
-                Одно из самых вкусных кофе в городе!
-              </Text>
+              <AnimatedTitle text="Одно из самых вкусных кофе в городе!" />
               <Text style={styles.description}>
                 Свежие зёрна, настоящая арабика и бережная обжарка
               </Text>
@@ -52,15 +51,7 @@ const styles = StyleSheet.create({
     height: "100%",
     paddingHorizontal: 30,
   },
-  intro: { alignItems: "center", justifyContent: "center", gap: Gaps._8 },
-  title: {
-    fontWeight: 600,
-    fontSize: FontSize._34,
-    lineHeight: 43,
-    textAlign: "center",
-    letterSpacing: 0.01,
-    color: Colors.White,
-  },
+  intro: { alignItems: "center", justifyContent: "center" },
   description: {
     color: Colors.Grey,
     textAlign: "center",

@@ -1,5 +1,7 @@
 import React from "react";
 import {
+  Animated,
+  GestureResponderEvent,
   Pressable,
   PressableProps,
   StyleSheet,
@@ -12,11 +14,39 @@ export const Button = ({
   text,
   ...props
 }: PressableProps & { text: string }) => {
+  const animatedValue = new Animated.Value(0);
+  const interpolatedValue = animatedValue.interpolate({
+    inputRange: [0, 100],
+    outputRange: [Colors.Brown, Colors.BrownHovered],
+  });
+
+  const handlePressIn = (e: GestureResponderEvent) => {
+    Animated.timing(animatedValue, {
+      duration: 100,
+      toValue: 100,
+      useNativeDriver: true,
+    }).start();
+
+    props.onPressIn?.(e);
+  };
+
+  const handlePressOut = (e: GestureResponderEvent) => {
+    Animated.timing(animatedValue, {
+      duration: 100,
+      toValue: 0,
+      useNativeDriver: true,
+    }).start();
+
+    props.onPressOut?.(e);
+  };
+
   return (
-    <Pressable {...props}>
-      <View style={styles.button}>
+    <Pressable {...props} onPressIn={handlePressIn} onPressOut={handlePressOut}>
+      <Animated.View
+        style={{ ...styles.button, backgroundColor: interpolatedValue }}
+      >
         <Text style={styles.text}>{text}</Text>
-      </View>
+      </Animated.View>
     </Pressable>
   );
 };
@@ -27,7 +57,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 21,
     borderRadius: Radius._12,
-    backgroundColor: Colors.Brown,
   },
   text: { color: Colors.White, fontSize: FontSize._16, fontWeight: 600 },
 });
