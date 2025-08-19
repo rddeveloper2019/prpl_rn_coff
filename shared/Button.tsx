@@ -1,19 +1,8 @@
-import React from "react";
-import {
-  Animated,
-  GestureResponderEvent,
-  Pressable,
-  PressableProps,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
-import { Colors, FontSize, Radius } from "./tokens";
+import React from 'react';
+import { Animated, GestureResponderEvent, Pressable, PressableProps, StyleSheet, Text } from 'react-native';
+import { Colors, FontSize, Radius } from './tokens';
 
-export const Button = ({
-  text,
-  ...props
-}: PressableProps & { text: string }) => {
+export const Button = ({ text, ...props }: PressableProps & { text: string }) => {
   const animatedValue = new Animated.Value(0);
   const interpolatedValue = animatedValue.interpolate({
     inputRange: [0, 100],
@@ -42,9 +31,7 @@ export const Button = ({
 
   return (
     <Pressable {...props} onPressIn={handlePressIn} onPressOut={handlePressOut}>
-      <Animated.View
-        style={{ ...styles.button, backgroundColor: interpolatedValue }}
-      >
+      <Animated.View style={{ ...styles.button, backgroundColor: interpolatedValue }}>
         <Text style={styles.text}>{text}</Text>
       </Animated.View>
     </Pressable>
@@ -53,8 +40,8 @@ export const Button = ({
 
 const styles = StyleSheet.create({
   button: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingVertical: 21,
     borderRadius: Radius._12,
   },
