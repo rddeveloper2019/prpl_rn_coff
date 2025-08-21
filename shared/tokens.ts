@@ -27,3 +27,7 @@ export const enum Radius {
   _12 = 12,
   _16 = 16,
 }
+export const enum FontFamily {
+  SoraRegular = 'Sora-Regular',
+  SoraSemiBold = 'Sora-SemiBold',
+}

@@ -1,8 +1,19 @@
 import React from 'react';
-import { Animated, GestureResponderEvent, Pressable, PressableProps, StyleSheet, Text } from 'react-native';
-import { Colors, FontSize, Radius } from './tokens';
+import {
+  Animated,
+  GestureResponderEvent,
+  Pressable,
+  PressableProps,
+  StyleSheet,
+  Text,
+} from 'react-native';
+import { Colors, FontFamily, FontSize, Radius } from './tokens';
+import { AppText } from './AppText';
 
-export const Button = ({ text, ...props }: PressableProps & { text: string }) => {
+export const Button = ({
+  text,
+  ...props
+}: PressableProps & { text: string }) => {
   const animatedValue = new Animated.Value(0);
   const interpolatedValue = animatedValue.interpolate({
     inputRange: [0, 100],
@@ -31,8 +42,10 @@ export const Button = ({ text, ...props }: PressableProps & { text: string }) =>
 
   return (
     <Pressable {...props} onPressIn={handlePressIn} onPressOut={handlePressOut}>
-      <Animated.View style={{ ...styles.button, backgroundColor: interpolatedValue }}>
-        <Text style={styles.text}>{text}</Text>
+      <Animated.View
+        style={{ ...styles.button, backgroundColor: interpolatedValue }}
+      >
+        <AppText style={styles.text}>{text}</AppText>
       </Animated.View>
     </Pressable>
   );
@@ -45,5 +58,8 @@ const styles = StyleSheet.create({
     paddingVertical: 21,
     borderRadius: Radius._12,
   },
-  text: { color: Colors.White, fontSize: FontSize._16, fontWeight: 600 },
+  text: {
+    fontWeight: 600,
+    fontFamily: FontFamily.SoraSemiBold,
+  },
 });
