@@ -24,6 +24,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "scheme": "purple-school-coffee-app-scheme",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

@@ -1,16 +1,16 @@
 export const enum Colors {
-  Brown = "#C67C4E",
-  BrownHovered = "#A76237",
-  BrownLight = "#FFF5EE",
-  White = "#FFFFFF",
-  Grey = "#A9A9A9",
-  GreyLight = "#9B9B9B",
-  GreyDark = "#8D8D8D",
-  GreyText = "#989898",
-  Black = "#2F2D2C",
-  Black100 = "#000000",
-  BlackLight = "#313131",
-  Primary = "#2F4B4E",
+  Brown = '#C67C4E',
+  BrownHovered = '#A76237',
+  BrownLight = '#FFF5EE',
+  White = '#FFFFFF',
+  Grey = '#A9A9A9',
+  GreyLight = '#9B9B9B',
+  GreyDark = '#8D8D8D',
+  GreyText = '#989898',
+  Black = '#2F2D2C',
+  Black100 = '#000000',
+  BlackLight = '#313131',
+  Primary = '#2F4B4E',
 }
 
 export const enum FontSize {
@@ -26,4 +26,8 @@ export const enum Gaps {
 export const enum Radius {
   _12 = 12,
   _16 = 16,
+}
+export const enum FontFamily {
+  SoraRegular = 'Sora-Regular',
+  SoraSemiBold = 'Sora-SemiBold',
 }
