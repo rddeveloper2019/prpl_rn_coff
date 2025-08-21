@@ -1,43 +1,87 @@
-import { Link } from 'expo-router';
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import { Colors } from '../shared/tokens';
+import {
+  Dimensions,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import { Colors, FontSize, Gaps } from '../shared/tokens';
+import { Button } from '../shared/Button';
+import { AnimatedTitle } from '../shared/AnimatedText';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { AppText } from '../shared/AppText';
+import { Link } from 'expo-router';
 
-export default function Page() {
+const Intro = () => {
+  const height = Dimensions.get('screen').height;
+  const width = Dimensions.get('screen').width;
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={require('../assets/bg.png')}
+      style={{ ...styles.image, height }}
+      resizeMode="cover"
+      imageStyle={{ height: height * 0.8 }}
+    >
       <SafeAreaView>
-        <View style={styles.main}>
-          <Text style={styles.title}>Hello World</Text>
-          <Text style={styles.subtitle}>
-            This is the first page of your app.
-          </Text>
-          <Link href={'/intro'}>Intro</Link>
+        <View style={{ ...styles.content }}>
+          <View style={styles.intro}>
+            <AnimatedTitle text="Одно из самых вкусных кофе в городе!" />
+            <AppText style={styles.description}>
+              Свежие зёрна, настоящая арабика и бережная обжарка
+            </AppText>
+          </View>
+          <Link href={'/catalog'} style={{ color: 'white' }}>
+            Catalog
+          </Link>
+          <Link href={'/catalog/10'} style={{ color: 'white' }}>
+            Catalog 10
+          </Link>
+          <Link href={'/success'} style={{ color: 'white' }}>
+            Success
+          </Link>
+          <Link href={'/cart'} style={{ color: 'white' }}>
+            Cart
+          </Link>
+          <Link href={'/address'} style={{ color: 'white' }}>
+            Address
+          </Link>
+          <Link href={'/addfferferfess'} style={{ color: 'white' }}>
+            Not Found
+          </Link>
+          <Button text="Начать" />
         </View>
       </SafeAreaView>
-    </View>
+    </ImageBackground>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'black',
+  },
+
+  content: {
+    alignItems: 'stretch',
+    justifyContent: 'flex-end',
+    gap: Gaps._24,
+    paddingHorizontal: 30,
+    height: '100%',
+  },
+  intro: { alignItems: 'center', justifyContent: 'center' },
+  description: {
+    color: Colors.Grey,
+    textAlign: 'center',
+    paddingHorizontal: 30,
+    fontSize: FontSize._14,
+  },
+  image: {
+    position: 'absolute',
+    top: 0,
     flex: 1,
-    alignItems: 'center',
-    padding: 24,
-    backgroundColor: Colors.Black,
-  },
-  main: {
-    flex: 1,
-    justifyContent: 'center',
-    maxWidth: 960,
-    marginHorizontal: 'auto',
-  },
-  title: {
-    fontSize: 64,
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    fontSize: 36,
-    color: '#38434D',
+    justifyContent: 'flex-end',
+    backgroundColor: 'black',
   },
 });
+
+export default Intro;
