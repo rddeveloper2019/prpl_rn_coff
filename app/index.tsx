@@ -26,29 +26,30 @@ const Intro = () => {
       <SafeAreaView>
         <View style={{ ...styles.content }}>
           <View style={styles.intro}>
+            <Link href={'/catalog'} style={{ color: 'white' }}>
+              Catalog
+            </Link>
+            <Link href={'/catalog/10'} style={{ color: 'white' }}>
+              Catalog 10
+            </Link>
+            <Link href={'/success'} style={{ color: 'white' }}>
+              Success
+            </Link>
+            <Link href={'/cart'} style={{ color: 'white' }}>
+              Cart
+            </Link>
+            <Link href={'/address'} style={{ color: 'white' }}>
+              Address
+            </Link>
+            <Link href={'/addfferferfess'} style={{ color: 'white' }}>
+              Not Found
+            </Link>
             <AnimatedTitle text="Одно из самых вкусных кофе в городе!" />
             <AppText style={styles.description}>
               Свежие зёрна, настоящая арабика и бережная обжарка
             </AppText>
           </View>
-          <Link href={'/catalog'} style={{ color: 'white' }}>
-            Catalog
-          </Link>
-          <Link href={'/catalog/10'} style={{ color: 'white' }}>
-            Catalog 10
-          </Link>
-          <Link href={'/success'} style={{ color: 'white' }}>
-            Success
-          </Link>
-          <Link href={'/cart'} style={{ color: 'white' }}>
-            Cart
-          </Link>
-          <Link href={'/address'} style={{ color: 'white' }}>
-            Address
-          </Link>
-          <Link href={'/addfferferfess'} style={{ color: 'white' }}>
-            Not Found
-          </Link>
+
           <Button text="Начать" />
         </View>
       </SafeAreaView>
