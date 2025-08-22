@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, ViewStyle } from 'react-native';
-import { Colors, FontSize, Radius } from '../shared/tokens';
+import { Colors, FontSize, Radius } from './tokens';
 import Svg, { Path } from 'react-native-svg';
+import { cn } from './utils';
 
 export const SearchInput = ({
   containerStyles,
@@ -13,7 +14,7 @@ export const SearchInput = ({
   placeholder: string;
 }) => {
   return (
-    <View style={{ ...styles.container, ...containerStyles }}>
+    <View style={cn(styles.container, containerStyles)}>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}

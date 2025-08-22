@@ -11,6 +11,7 @@ import {
 } from '../../../shared/tokens';
 import { AppText } from '../../../shared/AppText';
 import { Button } from '../../../shared/Button';
+import { cn } from '../../../shared/utils';
 
 export const Coffee = ({
   data,
@@ -20,7 +21,7 @@ export const Coffee = ({
   onPress: () => void;
 }) => {
   return (
-    <View style={{ ...styles.container, ...ShadowStyles.shadow }}>
+    <View style={cn(styles.container, ShadowStyles.shadow)}>
       <Image
         source={{
           uri: data.image,

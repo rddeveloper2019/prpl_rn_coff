@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { Colors, FontFamily, FontSize, Radius } from './tokens';
 import { AppText } from './AppText';
+import { cn } from './utils';
 
 export const Button = ({
   text,
@@ -50,13 +51,11 @@ export const Button = ({
   return (
     <Pressable {...props} onPressIn={handlePressIn} onPressOut={handlePressOut}>
       <Animated.View
-        style={{
-          ...styles.button,
+        style={cn(styles.button, buttonStyles, {
           backgroundColor: interpolatedValue,
-          ...buttonStyles,
-        }}
+        })}
       >
-        <AppText style={{ ...styles.text, ...textStyles }}>{text}</AppText>
+        <AppText style={cn(styles.text, textStyles)}>{text}</AppText>
       </Animated.View>
     </Pressable>
   );

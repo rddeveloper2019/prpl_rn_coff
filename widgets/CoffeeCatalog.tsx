@@ -1,21 +1,44 @@
 import React from 'react';
-import { Dimensions, StyleSheet, View, ViewStyle } from 'react-native';
+import {
+  ActivityIndicator,
+  Dimensions,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
 import { CoffeeType } from '../entities/coffee/model/coffee.model';
 import { Coffee } from '../entities/coffee/ui/Coffee';
 import { Colors } from '../shared/tokens';
+import { cn } from '../shared/utils';
 
 export const CoffeeCatalog = ({
   items,
   containerStyles,
   onItemSelect,
+  isLoading = false,
 }: {
   items: CoffeeType[];
   containerStyles?: ViewStyle;
   onItemSelect: () => void;
+  isLoading?: boolean;
 }) => {
   const width = Dimensions.get('screen').width;
+  const height = Dimensions.get('screen').height;
+  if (isLoading) {
+    return (
+      <View
+        style={cn(
+          styles.loadingContainer,
+          { height },
+          { paddingTop: height / 3 }
+        )}
+      >
+        <ActivityIndicator color={Colors.Primary} size={'large'} />
+      </View>
+    );
+  }
   return (
-    <View style={{ ...styles.container, ...containerStyles, maxWidth: width }}>
+    <View style={cn(styles.container, containerStyles, { maxWidth: width })}>
       {items.map((c) => {
         return <Coffee key={c.id} data={c} onPress={onItemSelect} />;
       })}
@@ -30,6 +53,11 @@ const styles = StyleSheet.create({
     rowGap: 13,
     columnGap: 16,
     flexDirection: 'row',
+    backgroundColor: Colors.PrimaryBg,
+  },
+
+  loadingContainer: {
+    alignItems: 'center',
     backgroundColor: Colors.PrimaryBg,
   },
 });
