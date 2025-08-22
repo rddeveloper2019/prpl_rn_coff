@@ -1,7 +1,13 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { CoffeeType } from '../model/coffee.model';
-import { Colors, FontFamily, FontSize, Radius } from '../../../shared/tokens';
+import {
+  Colors,
+  FontFamily,
+  FontSize,
+  Radius,
+  ShadowStyles,
+} from '../../../shared/tokens';
 import { AppText } from '../../../shared/AppText';
 import { Button } from '../../../shared/Button';
 import Svg, { Path } from 'react-native-svg';
@@ -14,7 +20,7 @@ export const Coffee = ({
   onPress: () => void;
 }) => {
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container, ...ShadowStyles.shadow }}>
       <Image
         source={{
           uri: data.image,

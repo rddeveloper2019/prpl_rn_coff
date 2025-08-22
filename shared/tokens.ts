@@ -1,3 +1,5 @@
+import { StyleSheet } from 'react-native';
+
 export const enum Colors {
   Brown = '#C67C4E',
   BrownHovered = '#A76237',
@@ -36,3 +38,24 @@ export const enum FontFamily {
   SoraRegular = 'Sora-Regular',
   SoraSemiBold = 'Sora-SemiBold',
 }
+
+export const ShadowStyles = StyleSheet.create({
+  shadow: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+
+    shadowOpacity: 0.15,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 6 },
+
+    elevation: 8,
+
+    backgroundColor: '#fff',
+    borderRadius: 16,
+  },
+});
