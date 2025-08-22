@@ -10,7 +10,7 @@ export const SearchInput = ({
   placeholder,
 }: {
   containerStyles?: ViewStyle;
-  onChangeText: () => void;
+  onChangeText: (text: string) => void;
   placeholder: string;
 }) => {
   return (

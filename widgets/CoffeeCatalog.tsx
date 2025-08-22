@@ -30,7 +30,7 @@ export const CoffeeCatalog = ({
         style={cn(
           styles.loadingContainer,
           { height },
-          { paddingTop: height / 3 }
+          { paddingTop: height / 3.5 }
         )}
       >
         <ActivityIndicator color={Colors.Primary} size={'large'} />
