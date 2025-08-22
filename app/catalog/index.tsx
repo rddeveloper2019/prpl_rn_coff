@@ -10,7 +10,7 @@ const Catalog = () => {
     <>
       <Stack.Screen options={{ title: `` }} />
       <SafeAreaView>
-        <SearchInput onChangeText={() => {}} />
+        <SearchInput placeholder="Найти кофе" onChangeText={() => {}} />
         <CoffeeCatalog items={db} onItemSelect={() => {}} />
       </SafeAreaView>
     </>

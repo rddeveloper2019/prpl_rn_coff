@@ -6,16 +6,18 @@ import Svg, { Path } from 'react-native-svg';
 export const SearchInput = ({
   containerStyles,
   onChangeText,
+  placeholder,
 }: {
   containerStyles?: ViewStyle;
   onChangeText: () => void;
+  placeholder: string;
 }) => {
   return (
     <View style={{ ...styles.container, ...containerStyles }}>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Найти кофе"
+          placeholder={placeholder}
           placeholderTextColor={Colors.GreyText}
           onChangeText={onChangeText}
         />
