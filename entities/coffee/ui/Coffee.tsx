@@ -61,11 +61,11 @@ const styles = StyleSheet.create({
     padding: 4,
     backgroundColor: Colors.White,
     display: 'flex',
-    width: 150,
+    flexBasis: 140,
+    // alignSelf: 'flex-start',
     borderRadius: Radius._16,
   },
   image: {
-    width: 141,
     height: 132,
   },
   titleBlock: {
