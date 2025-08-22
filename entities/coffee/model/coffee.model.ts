@@ -1,5 +1,3 @@
-export type CoffeeTypes = 'cappuccino' | 'latte' | 'macchiato' | 'americano';
-
 export interface CoffeeType {
   id: number;
   name: string;
@@ -10,3 +8,8 @@ export interface CoffeeType {
   description: string;
   rating: number;
 }
+export interface CoffeePayload {
+  text: string;
+  type: string;
+}
+export type CoffeeResponse = CoffeeType[];

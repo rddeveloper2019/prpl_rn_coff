@@ -24,13 +24,13 @@ export const CoffeeFilter = ({
         selected={value === 'cappuccino'}
       />
       <Chip
-        text={'Маккиято'}
+        text={'Латте'}
         value={value}
         onClick={() => onSelect('latte')}
         selected={value === 'latte'}
       />
       <Chip
-        text={'Латте'}
+        text={'Маккиято'}
         value={value}
         onClick={() => onSelect('macchiato')}
         selected={value === 'macchiato'}

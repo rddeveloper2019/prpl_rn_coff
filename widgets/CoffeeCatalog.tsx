@@ -38,7 +38,9 @@ export const CoffeeCatalog = ({
     );
   }
   return (
-    <View style={cn(styles.container, containerStyles, { maxWidth: width })}>
+    <View
+      style={cn(styles.container, containerStyles, { maxWidth: width, height })}
+    >
       {items.map((c) => {
         return <Coffee key={c.id} data={c} onPress={onItemSelect} />;
       })}
