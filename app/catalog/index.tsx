@@ -3,14 +3,14 @@ import React from 'react';
 import { Stack } from 'expo-router';
 import { CoffeeCatalog } from '../../widgets/CoffeeCatalog';
 import { db } from '../../entities/coffee/model/coffee..state';
-import { SearchPanel } from '../../widgets/SearchPanel';
+import { SearchInput } from '../../widgets/SearchPanel';
 
 const Catalog = () => {
   return (
     <>
-      <Stack.Screen options={{ title: `Catalog` }} />
+      <Stack.Screen options={{ title: `` }} />
       <SafeAreaView>
-        <SearchPanel onChangeText={() => {}} />
+        <SearchInput onChangeText={() => {}} />
         <CoffeeCatalog items={db} onItemSelect={() => {}} />
       </SafeAreaView>
     </>

@@ -47,7 +47,7 @@ const Intro = () => {
             </AppText>
           </View>
 
-          <Button text="Начать" onPress={() => router.push('/catalog')} />
+          <Button text="Начать" onPress={() => router.replace('/catalog')} />
         </View>
       </SafeAreaView>
     </ImageBackground>

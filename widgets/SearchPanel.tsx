@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, View, ViewStyle } from 'react-native';
 import { Colors, FontSize, Radius } from '../shared/tokens';
 import Svg, { Path } from 'react-native-svg';
 
-export const SearchPanel = ({
+export const SearchInput = ({
   containerStyles,
   onChangeText,
 }: {

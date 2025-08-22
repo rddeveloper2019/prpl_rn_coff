@@ -54,7 +54,6 @@ const AppLayout = () => {
           name="catalog"
           options={{
             headerShown: true,
-            title: 'Catalog',
             headerBackTitle: '',
             contentStyle: {
               backgroundColor: Colors.Black100,
