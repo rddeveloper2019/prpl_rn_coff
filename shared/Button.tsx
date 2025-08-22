@@ -6,14 +6,22 @@ import {
   PressableProps,
   StyleSheet,
   Text,
+  TextStyle,
+  ViewStyle,
 } from 'react-native';
 import { Colors, FontFamily, FontSize, Radius } from './tokens';
 import { AppText } from './AppText';
 
 export const Button = ({
   text,
+  buttonStyles = {},
+  textStyles = {},
   ...props
-}: PressableProps & { text: string }) => {
+}: PressableProps & {
+  text: string;
+  buttonStyles?: ViewStyle;
+  textStyles?: TextStyle;
+}) => {
   const animatedValue = new Animated.Value(0);
   const interpolatedValue = animatedValue.interpolate({
     inputRange: [0, 100],
@@ -43,9 +51,13 @@ export const Button = ({
   return (
     <Pressable {...props} onPressIn={handlePressIn} onPressOut={handlePressOut}>
       <Animated.View
-        style={{ ...styles.button, backgroundColor: interpolatedValue }}
+        style={{
+          ...styles.button,
+          backgroundColor: interpolatedValue,
+          ...buttonStyles,
+        }}
       >
-        <AppText style={styles.text}>{text}</AppText>
+        <AppText style={{ ...styles.text, ...textStyles }}>{text}</AppText>
       </Animated.View>
     </Pressable>
   );
