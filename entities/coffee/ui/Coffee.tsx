@@ -18,7 +18,7 @@ export const Coffee = ({
   onPress,
 }: {
   data: CoffeeType;
-  onPress: () => void;
+  onPress: (id: number) => void;
 }) => {
   return (
     <View style={cn(styles.container, ShadowStyles.shadow)}>
@@ -39,7 +39,7 @@ export const Coffee = ({
           text="+"
           buttonStyles={styles.button}
           textStyles={styles.buttonText}
-          onPress={onPress}
+          onPress={() => onPress(data.id)}
         />
       </View>
       <View style={styles.rating}>

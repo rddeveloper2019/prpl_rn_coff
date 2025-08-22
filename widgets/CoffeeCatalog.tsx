@@ -19,7 +19,7 @@ export const CoffeeCatalog = ({
 }: {
   items: CoffeeType[];
   containerStyles?: ViewStyle;
-  onItemSelect: () => void;
+  onItemSelect: (id: number) => void;
   isLoading?: boolean;
 }) => {
   const width = Dimensions.get('screen').width;

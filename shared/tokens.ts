@@ -44,12 +44,10 @@ export const ShadowStyles = StyleSheet.create({
     shadowColor: Colors.Black,
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 3,
     },
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 8,
-    backgroundColor: Colors.White,
-    borderRadius: 16,
+    shadowOpacity: 0.05,
+    shadowRadius: 5,
+    elevation: 2,
   },
 });

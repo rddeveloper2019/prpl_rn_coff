@@ -16,7 +16,7 @@ export const Chip = ({
   text: string;
   value: string;
   textStyles?: TextStyle;
-  onClick: (v: string) => void;
+  onClick: () => void;
 }) => {
   const combinedChipStyles = cn(
     styles.chip,
@@ -30,13 +30,7 @@ export const Chip = ({
   );
 
   return (
-    <Pressable
-      style={combinedChipStyles}
-      {...props}
-      onPress={() => {
-        onClick(value);
-      }}
-    >
+    <Pressable style={combinedChipStyles} {...props} onPress={onClick}>
       <AppText style={combinedTextStyles}>{text}</AppText>
     </Pressable>
   );
