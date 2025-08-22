@@ -5,10 +5,10 @@ import Svg, { Path } from 'react-native-svg';
 
 export const SearchPanel = ({
   containerStyles,
-  onSearch,
+  onChangeText,
 }: {
   containerStyles?: ViewStyle;
-  onSearch: () => void;
+  onChangeText: () => void;
 }) => {
   return (
     <View style={{ ...styles.container, ...containerStyles }}>
@@ -17,6 +17,7 @@ export const SearchPanel = ({
           style={styles.input}
           placeholder="Найти кофе"
           placeholderTextColor={Colors.GreyText}
+          onChangeText={onChangeText}
         />
         <Svg
           width={20}
@@ -43,8 +44,10 @@ const styles = StyleSheet.create({
   inputContainer: {
     position: 'relative',
     backgroundColor: Colors.BlackLight,
-    margin: 30,
+    marginVertical: 30,
+    marginHorizontal: 'auto',
     height: 52,
+    width: 315,
     borderRadius: Radius._16,
 
     fontSize: FontSize._14,

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
 import { CoffeeType } from '../model/coffee.model';
 import {
   Colors,
@@ -10,7 +11,6 @@ import {
 } from '../../../shared/tokens';
 import { AppText } from '../../../shared/AppText';
 import { Button } from '../../../shared/Button';
-import Svg, { Path } from 'react-native-svg';
 
 export const Coffee = ({
   data,
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     margin: 12,
+    marginTop: 8,
   },
   button: {
     width: 32,

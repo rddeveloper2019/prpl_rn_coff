@@ -41,21 +41,15 @@ export const enum FontFamily {
 
 export const ShadowStyles = StyleSheet.create({
   shadow: {
-    shadowColor: '#000',
+    shadowColor: Colors.Black,
     shadowOffset: {
       width: 0,
       height: 4,
     },
     shadowOpacity: 0.2,
     shadowRadius: 8,
-
-    shadowOpacity: 0.15,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 6 },
-
     elevation: 8,
-
-    backgroundColor: '#fff',
+    backgroundColor: Colors.White,
     borderRadius: 16,
   },
 });
