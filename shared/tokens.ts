@@ -11,11 +11,15 @@ export const enum Colors {
   Black100 = '#000000',
   BlackLight = '#313131',
   Primary = '#2F4B4E',
+  PrimaryBg = '#F9F9F9',
 }
 
 export const enum FontSize {
+  _10 = 10,
+  _12 = 12,
   _14 = 14,
   _16 = 16,
+  _18 = 18,
   _34 = 34,
 }
 export const enum Gaps {
@@ -24,6 +28,7 @@ export const enum Gaps {
 }
 
 export const enum Radius {
+  _10 = 10,
   _12 = 12,
   _16 = 16,
 }
