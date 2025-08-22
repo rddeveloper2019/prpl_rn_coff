@@ -11,7 +11,7 @@ import { Button } from '../shared/Button';
 import { AnimatedTitle } from '../shared/AnimatedText';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppText } from '../shared/AppText';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 
 const Intro = () => {
   const height = Dimensions.get('screen').height;
@@ -26,9 +26,6 @@ const Intro = () => {
       <SafeAreaView>
         <View style={{ ...styles.content }}>
           <View style={styles.intro}>
-            <Link href={'/catalog'} style={{ color: 'white' }}>
-              Catalog
-            </Link>
             <Link href={'/catalog/10'} style={{ color: 'white' }}>
               Catalog 10
             </Link>
@@ -50,7 +47,7 @@ const Intro = () => {
             </AppText>
           </View>
 
-          <Button text="Начать" />
+          <Button text="Начать" onPress={() => router.replace('/catalog')} />
         </View>
       </SafeAreaView>
     </ImageBackground>

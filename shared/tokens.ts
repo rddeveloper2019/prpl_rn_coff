@@ -1,3 +1,5 @@
+import { StyleSheet } from 'react-native';
+
 export const enum Colors {
   Brown = '#C67C4E',
   BrownHovered = '#A76237',
@@ -11,11 +13,15 @@ export const enum Colors {
   Black100 = '#000000',
   BlackLight = '#313131',
   Primary = '#2F4B4E',
+  PrimaryBg = '#F9F9F9',
 }
 
 export const enum FontSize {
+  _10 = 10,
+  _12 = 12,
   _14 = 14,
   _16 = 16,
+  _18 = 18,
   _34 = 34,
 }
 export const enum Gaps {
@@ -24,6 +30,7 @@ export const enum Gaps {
 }
 
 export const enum Radius {
+  _10 = 10,
   _12 = 12,
   _16 = 16,
 }
@@ -31,3 +38,16 @@ export const enum FontFamily {
   SoraRegular = 'Sora-Regular',
   SoraSemiBold = 'Sora-SemiBold',
 }
+
+export const ShadowStyles = StyleSheet.create({
+  shadow: {
+    shadowColor: Colors.Black,
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 5,
+    elevation: 2,
+  },
+});

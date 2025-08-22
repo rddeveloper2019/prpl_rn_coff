@@ -3,6 +3,7 @@ import { StyleSheet, Text, TextProps } from 'react-native';
 
 import { Colors, FontFamily, FontSize } from './tokens';
 import React from 'react';
+import { cn } from './utils';
 
 export const AppText = ({
   children,
@@ -10,7 +11,7 @@ export const AppText = ({
   ...props
 }: PropsWithChildren<TextProps> & { style?: any }) => {
   return (
-    <Text {...props} style={{ ...styles.text, ...style }}>
+    <Text {...props} style={cn(styles.text, style)}>
       {children}
     </Text>
   );

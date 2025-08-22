@@ -31,7 +31,7 @@ const AppLayout = () => {
           animation: 'slide_from_right',
           gestureEnabled: true,
           contentStyle: {
-            backgroundColor: Colors.Black,
+            backgroundColor: '#000000',
           },
           headerTitleStyle: {
             fontWeight: 600,
@@ -54,8 +54,10 @@ const AppLayout = () => {
           name="catalog"
           options={{
             headerShown: true,
-            title: 'Catalog',
             headerBackTitle: '',
+            contentStyle: {
+              backgroundColor: Colors.Black100,
+            },
           }}
         />
 
