@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.White,
     display: 'flex',
     flexBasis: 140,
-    // alignSelf: 'flex-start',
     borderRadius: Radius._16,
   },
   image: {

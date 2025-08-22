@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     columnGap: 16,
     flexDirection: 'row',
     backgroundColor: Colors.PrimaryBg,
+    justifyContent: 'center',
   },
 
   loadingContainer: {
